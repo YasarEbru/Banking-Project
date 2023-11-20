@@ -1,0 +1,21 @@
+<template>
+    <lightning-input onchange={handleInput} class="slds-media_center"></lightning-input>
+      <lightning-button label="Search SA Details" onclick={handleSearchSA}></lightning-button>
+    <lightning-layout >
+        <template for:each={salesAgent.data} for:item="w" >  
+        <lightning-card key={w.id} >
+          
+    <div class="slds-p-around_medium">
+        <lightning-tile label={w.Name__c}  href="https://bank4-dev-ed.develop.lightning.force.com/lightning/r/SA_Details__c/a067R00003ECiDWQA1/view" type="media">
+            <lightning-avatar slot="media" src="https://www.lightningdesignsystem.com/assets/images/avatar1.jpg" fallback-icon-name="standard:person_account" alternative-text="Bruce Wayne"></lightning-avatar>
+        <h1>Name:{w.Name__c}</h1>
+        <h1>Customer Handled:{w.Customer_Handled__c}</h1>
+        <h1>Date of Joining:{w.Date_of_Joining__c}</h1>
+        <h1>Experience:{w.Experience__c}</h1>
+        </lightning-tile>
+    
+</div>
+</lightning-card>
+</template>
+</lightning-layout>
+</template>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Collaboration_Type_Version_Update</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISPICKVAL( Collaboration_Type__c , &quot;Version Update&quot;)&amp;&amp;
+ (ISBLANK( Use_Cases_to_Address__c)||
+ ISBLANK( Technical_Information_Needed__c ) ||
+ ISBLANK(  TEXT( Environment__c )  ) || 
+ ISBLANK( Engagement_Summary__c )|| 
+ ISBLANK( Scope__c )  )</errorConditionFormula>
+    <errorMessage>Collaboration Type ‘Version Update’ seçili ise Use cases to 
+address / Technical Information Needed / Environment/ 
+Engagement summary/ Scope alanları boş bırakılamaz.</errorMessage>
+</ValidationRule>

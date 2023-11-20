@@ -1,0 +1,31 @@
+<template>
+    <lightning-card title="Supervisor" icon-name="standard:peope">
+        <div class="slds-var-m-around_medium">
+            <template if:true={sadetail.data}>
+                <lightning-record-form 
+                object-api-name="Contact"
+                record-id={supervisorId}
+                layout-type="Compact"
+                columns="2">
+                </lightning-record-form>
+            </template>
+            <template if:true={sadetail.error}>
+                <div class="slds-text-color-error">
+                    An error occured while loading the sa detail record
+                </div>
+            </template>           
+        </div>
+    </lightning-card>
+    
+        <div>
+            <template for:each={currentGroup} for:item="agent" for:index="index">
+                <div key={agent.Id}>
+                    <p>{agent.Name}</p>
+                    <p>{agent.Email}</p>
+                    <p>{agent.Phone}</p>
+                </div>
+            </template>
+    
+            <button onclick={nextPage} disabled={isLastPage}>Next</button>
+        </div>
+</template>

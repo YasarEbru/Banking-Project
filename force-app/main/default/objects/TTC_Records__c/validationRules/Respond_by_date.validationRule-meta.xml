@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Respond_by_date</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(Respond_by_Date__c &lt; (TODAY() + 5), ISNEW())</errorConditionFormula>
+    <errorMessage>Respond by date, yanıtlama tarihi ileri bir tarihte olmalı ve 
+bugünden itibaren en az 5 gün sonrasında bir tarihe 
+atanmalıdır</errorMessage>
+</ValidationRule>

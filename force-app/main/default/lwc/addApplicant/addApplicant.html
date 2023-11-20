@@ -1,0 +1,32 @@
+<template>
+    <div class="slds-grid slds-wrap slds-p-around_small">
+        <div class="slds-col slds-size_1-of-3 slds-p-around_small">
+            <lightning-combobox
+            name="applicant__type"
+            label="Applicant Type"
+            placeholder="--None--"
+            options={applTypeOptions}
+            onchange={applTypeChange} required class="validateCombobox"></lightning-combobox>
+        </div>
+        <div class="slds-col slds-size_1-of-2 slds-p-around_small slds-align_absolute-center">
+            <lightning-button variant="brand" label="Add Applicant" title="Add Applicant" 
+            onclick={addApplicantClick} disabled={showAddApplicant}></lightning-button>
+           </div>
+    </div>
+    <article class="slds-card"  if:true={showAddApplicant}>
+        <div class="slds-card__header slds-grid">
+          <header class="slds-media slds-media_center slds-has-flexi-truncate">
+             <div class="slds-media__figure">
+                <lightning-icon icon-name="standard:individual" alternative-text="Add Applicant" title="Add Applicant"></lightning-icon>
+              </div>
+              <div class="slds-media__body">
+                <h2 class="slds-card__header-title">
+                    <span>Accounts</span>
+                </h2>
+              </div>
+          </header>
+          <div class="slds-card__body slds-card__body_inner">Anything can go into the card body</div>
+        </div>
+   </article>
+   
+</template>

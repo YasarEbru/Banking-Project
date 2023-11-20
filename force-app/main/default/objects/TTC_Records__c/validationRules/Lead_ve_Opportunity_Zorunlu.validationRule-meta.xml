@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_ve_Opportunity_Zorunlu</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISBLANK( Lead__c ) &amp;&amp;  ISBLANK( Opportunity__c )</errorConditionFormula>
+    <errorMessage>TTC Record her zaman bir Lead veya Opportunity ile 
+ilişkilendilmelidir.</errorMessage>
+</ValidationRule>
